@@ -140,8 +140,8 @@ console.log(user); // {}
 
 // 5. Write the checkIfUsersHaveTheSameName function
 
-function checkIfUsersHaveTheSameName(userFirst, userSecond) {
-    return userFirst.firstName === userSecond.firstName && userFirst.lastName === userSecond.lastName;
+function checkIfUsersHaveTheSameName(firstUser, secondUser) {
+    return firstUser.firstName === secondUser.firstName && firstUser.lastName === secondUser.lastName;
 }
 
 const firstJohn = {
@@ -325,11 +325,12 @@ function addContact(contacts, name, phoneNumber) {
 }
 
 function findContact(contacts, name) {
-    if (!contacts[name]) {
+    const contact = contacts[name];
+    if (!contact) {
         return undefined;
     }
 
-    return `Name: ${contacts[name].name}, Phone: ${contacts[name].phoneNumber}`;
+    return `Name: ${contact.name}, Phone: ${contact.phoneNumber}`;
 }
 
 const contacts = {};
